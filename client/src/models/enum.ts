@@ -20,3 +20,7 @@ export enum ButtonState {
     Positive = 'btn_positive',
     Negative = 'btn_negative',
 }
+
+export enum MapPaths{
+    TestRoom="/src/assets/json/map.json"
+}

@@ -9,6 +9,10 @@ $screen-mobile: 550px;
   # Color
 \*------------------------------------*/
 
+body, html {
+  margin: 0;
+  padding: 0;
+}
 // Primary
 $primary50: #aea270;
 $primary100: #fff0a3;

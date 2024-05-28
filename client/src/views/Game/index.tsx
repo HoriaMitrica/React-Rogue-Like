@@ -1,13 +1,11 @@
+import { Player } from "../../components/Player"
+import { TileMap } from "../../components/TileMap"
 
 export const Game=()=> {
     return (
       <>
-      <div>
-        This is game
-      </div>
-      <button onClick={()=>{onRedirectClick(FERoutes.Homepage)}}>
-        homepage
-    </button>
+      <TileMap/>
+      <Player/>
       </>
     )
   }
