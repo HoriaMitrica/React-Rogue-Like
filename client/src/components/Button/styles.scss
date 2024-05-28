@@ -1,0 +1,78 @@
+@use "@/styles/globalVariables.scss";
+@use "@/styles/mixinHelper";
+
+.button_container {
+  width: fit-content;
+
+  .button {
+    @include mixinHelper.center-content;
+    color: globalVariables.$white;
+    gap: globalVariables.$spacing-5;
+    border-radius: globalVariables.$border-radius-rounded;
+    cursor: pointer;
+    flex-direction: row;
+    font-weight: 500;
+
+    &.button_xs {
+      padding: 7px 12px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+    &.button_small {
+      padding: 7px 12px;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    &.button_medium {
+      padding: 9px 20px;
+      font-size: 14px;
+      line-height: 21px;
+    }
+    &.button_large {
+      padding: 11px 20px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+    &.button_xl {
+      padding: 13px 24px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &.btn_negative {
+      transition: all 0.3s ease 0s;
+
+      &:hover,
+      &:focus {
+        transform: scale(0.95);
+      }
+    }
+
+    &.btn_positive {
+      transition: all 0.3s ease 0s;
+
+      &:hover,
+      &:focus {
+        transform: scale(1.05);
+      }
+    }
+
+    &.brown {
+      @extend .button;
+      color: globalVariables.$primary50;
+      background-color: globalVariables.$primary200;
+      text-shadow: 0 0 10px globalVariables.$primary400;
+
+      &:hover,
+      &:focus {
+        color: globalVariables.$primary100;
+        background-color: globalVariables.$primary300;
+        text-shadow: 0 0 5px globalVariables.$primary500;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

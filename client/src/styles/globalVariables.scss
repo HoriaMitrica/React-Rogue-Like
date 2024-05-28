@@ -1,0 +1,103 @@
+/*------------------------------------*\
+  # Media Queries
+\*------------------------------------*/
+$screen-desktop: 1024px;
+$screen-tablet: 768px;
+$screen-mobile: 550px;
+
+/*------------------------------------*\
+  # Color
+\*------------------------------------*/
+
+// Primary
+$primary50: #aea270;
+$primary100: #fff0a3;
+$primary200: #2a1610;
+$primary300: #361911;
+$primary400: #8b520f;
+$primary500: #f88600;
+
+// Black
+$black: #000000;
+
+// White
+$white: #ffffff;
+
+// Blue
+$blue50: #1c64f2;
+$blue100: #1a56db;
+
+// Gray
+$gray50: #f9fafb;
+$gray100: #d1d5db;
+$gray200: #9ca3af;
+$gray300: #6b7280;
+$gray900: #111928;
+
+// Green
+$green50: #f3faf7;
+$green100: #0e9f6e;
+$green200: #057a55;
+$green300: #046c4e;
+
+// Red
+$red50: #fdf2f2;
+$red100: #f05252;
+$red200: #e02424;
+$red300: #c81e1e;
+
+/*------------------------------------*\
+  # Filters
+\*------------------------------------*/
+$filter-gray: brightness(0) saturate(100%) invert(56%) sepia(89%) saturate(0%)
+  hue-rotate(282deg) brightness(97%) contrast(96%);
+$filter-green: brightness(0) saturate(100%) invert(27%) sepia(12%)
+  saturate(6755%) hue-rotate(131deg) brightness(99%) contrast(97%);
+$filter-red: brightness(0) saturate(100%) invert(16%) sepia(96%) saturate(2740%)
+  hue-rotate(348deg) brightness(100%) contrast(97%);
+$filter-dark: brightness(0) saturate(100%) invert(14%) sepia(12%)
+  saturate(1325%) hue-rotate(164deg) brightness(95%) contrast(93%);
+$filter-dark-gray: invert(47%) sepia(5%) saturate(1047%) hue-rotate(182deg)
+  brightness(93%) contrast(94%);
+
+/*------------------------------------*\
+  # Transitions
+\*------------------------------------*/
+$ease-in-out: 0.3s ease-in-out;
+
+/*------------------------------------*\
+  # Spacing
+\*------------------------------------*/
+$spacing-0: 0px;
+$spacing-1: 1px;
+$spacing-2: 2px;
+$spacing-3: 4px;
+$spacing-4: 6px;
+$spacing-5: 8px;
+$spacing-6: 10px;
+$spacing-7: 12px;
+$spacing-8: 14px;
+$spacing-9: 16px;
+$spacing-10: 20px;
+$spacing-11: 24px;
+$spacing-12: 28px;
+$spacing-13: 32px;
+$spacing-14: 36px;
+$spacing-15: 40px;
+$spacing-16: 44px;
+$spacing-17: 48px;
+$spacing-18: 56px;
+$spacing-19: 64px;
+$spacing-20: 80px;
+
+/*------------------------------------*\
+  # Border radius
+\*------------------------------------*/
+$border-radius-rounded-sm: 2px;
+$border-radius-rounded: 4px;
+$border-radius-rounded-md: 6px;
+$border-radius-rounded-lg: 8px;
+$border-radius-rounded-xl: 12px;
+$border-radius-rounded-2xl: 16px;
+$border-radius-rounded-3xl: 24px;
+$border-radius-rounded-full: 9999px;
