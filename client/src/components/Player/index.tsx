@@ -1,35 +1,44 @@
 import { useState,useEffect } from 'react'
-import { IPosition } from '../../models/player'
+import { IPosition, PlayerProps } from '../../models/player'
+import { TILE_SIZE } from '../../constants/constants';
+export const Player:React.FC<PlayerProps> = ({layers}) => {
 
-export const Player = () => {
-
-    const [position, setPosition] = useState<IPosition>({ x: 0, y: 0 })
-
+    const [position, setPosition] = useState<IPosition>({ x: 1, y: 1 });
+    console.log(position);
     useEffect(() => {
-        const handleKeyPress = (event: KeyboardEvent) => {
-            switch (event.key) {
-                case 'w':
-                    setPosition(prev => ({ x: prev.x, y: prev.y - 1 }));
-                    break;
-                case 'a':
-                    setPosition(prev => ({ x: prev.x - 1, y: prev.y }));
-                    break;
-                case 's':
-                    setPosition(prev => ({ x: prev.x, y: prev.y + 1 }));
-                    break;
-                case 'd':
-                    setPosition(prev => ({ x: prev.x + 1, y: prev.y }));
-                    break;
-                default:
-                    break;
-            }
-        };
+      window.addEventListener('keydown', handleKeyPress);
+      return () => {
+        window.removeEventListener('keydown', handleKeyPress);
+      };
+    }, [position]);
 
-        window.addEventListener('keydown', handleKeyPress);
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, []);
+    const handleKeyPress = (e: KeyboardEvent) => {
+      let newX = position.x;
+      let newY = position.y;
+  
+      if (e.key === 'w') newY -= 1;
+      if (e.key === 's') newY += 1;
+      if (e.key === 'a') newX -= 1;
+      if (e.key === 'd') newX += 1;
+  
+      if (!checkCollision(newX, newY)) {
+        setPosition({ x: newX, y: newY });
+      }
+    };
+  
+    const checkCollision = (x: number, y: number): boolean => {
+      for (const layer of layers) {
+        if (layer.collider) {
+          for (const tile of layer.tiles) {
+            if (tile.x === x && tile.y === y) {
+              return true;
+            }
+          }
+        }
+      }
+      return false;
+    };
+  
 
     return (
         <>
@@ -39,10 +48,10 @@ export const Player = () => {
                     key={0}
                     style={{
                         position: 'relative',
-                        left: position.x * 32,
-                        top: position.y * 32,
-                        width: 32,
-                        height: 32,
+                        left: position.x * TILE_SIZE,
+                        top: position.y * TILE_SIZE,
+                        width: TILE_SIZE,
+                        height: TILE_SIZE,
                         backgroundColor: 'brown',
                     }}
                 />
