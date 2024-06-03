@@ -8,3 +8,10 @@ export interface IPosition{
 export interface PlayerProps{
     layers:Layer[]
 }
+
+export interface IStats{
+    attack:number,
+    healthPoints:number,
+    defense:number,
+   
+}

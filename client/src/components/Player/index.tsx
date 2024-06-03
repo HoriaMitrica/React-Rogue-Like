@@ -1,7 +1,8 @@
 import { useState,useEffect } from 'react'
 import { IPosition, PlayerProps } from '../../models/player'
 import { TILE_SIZE } from '../../constants/constants';
-export const Player:React.FC<PlayerProps> = ({layers}) => {
+import { Inventory } from '../Inventory';
+export const Player: React.FC<PlayerProps> = ({ layers }) => {
 
     const [position, setPosition] = useState<IPosition>({ x: 1, y: 1 });
     console.log(position);
@@ -40,22 +41,21 @@ export const Player:React.FC<PlayerProps> = ({layers}) => {
     };
   
 
-    return (
-        <>
-            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
-
-                <div
-                    key={0}
-                    style={{
-                        position: 'relative',
-                        left: position.x * TILE_SIZE,
-                        top: position.y * TILE_SIZE,
-                        width: TILE_SIZE,
-                        height: TILE_SIZE,
-                        backgroundColor: 'brown',
-                    }}
-                />
-            </div>
-        </>
-    )
+  return (
+    <>
+      <div
+        key={0}
+        style={{
+          position: 'absolute',
+          left: position.x * TILE_SIZE,
+          top: position.y * TILE_SIZE,
+          width: TILE_SIZE,
+          height: TILE_SIZE,
+          backgroundImage: `url(/src/assets/sprites/rogues.png)`,
+          backgroundPosition: `-${32}px -${32}px`
+        }}
+      />
+      <Inventory slotsAmount={12}/>
+    </>
+  )
 }
