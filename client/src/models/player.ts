@@ -1,3 +1,4 @@
+import { Class } from "./enum";
 import { Layer } from "./map";
 
 export interface IPosition{
@@ -6,12 +7,19 @@ export interface IPosition{
 }
 
 export interface PlayerProps{
-    layers:Layer[]
+    layers:Layer[],
+    playerInfo:IPlayer,   
 }
 
 export interface IStats{
     attack:number,
     healthPoints:number,
     defense:number,
-   
+}
+
+export interface IPlayer{
+    name:string,
+    class:Class,
+    icon:string,
+    stats:IStats,
 }

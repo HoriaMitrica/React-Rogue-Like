@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react'
 import { IPosition, PlayerProps } from '../../models/player'
 import { TILE_SIZE } from '../../constants/constants';
 import { Inventory } from '../Inventory';
-export const Player: React.FC<PlayerProps> = ({ layers }) => {
+
+export const Player: React.FC<PlayerProps> = ({ layers, }) => {
 
   const [position, setPosition] = useState<IPosition>({ x: 1, y: 1 });
+  const [inventorySlotsAmount, setInventorySlotsAmount] = useState<number>(6);
+  const [isInventoryVisible, setIsInventoryVisible] = useState<boolean>(false);
 
   useEffect(() => {
 
@@ -42,7 +45,9 @@ export const Player: React.FC<PlayerProps> = ({ layers }) => {
         window.scrollBy(TILE_SIZE * 4, 0);  
       }
     }
-
+    if (e.key === 'i') {
+     setIsInventoryVisible(!isInventoryVisible)
+    }
     if (!checkCollision(newX, newY)) {
       setPosition({ x: newX, y: newY });
     }
@@ -71,11 +76,12 @@ export const Player: React.FC<PlayerProps> = ({ layers }) => {
           top: position.y * TILE_SIZE,
           width: TILE_SIZE,
           height: TILE_SIZE,
-          backgroundImage: `url(/src/assets/sprites/rogues.png)`,
-          backgroundPosition: `-${32}px -${32}px`
+          backgroundImage: `url(/src/assets/sprites/characters/elf.png)`,
         }}
       />
-      <Inventory slotsAmount={12} items={[]}/>
+      <div style={{visibility:isInventoryVisible?"visible":"hidden"}}>
+      <Inventory slotsAmount={inventorySlotsAmount} items={[]}/>
+      </div>
     </>
   )
 }
