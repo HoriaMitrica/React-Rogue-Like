@@ -7,8 +7,6 @@ export const Player: React.FC<PlayerProps> = ({ layers }) => {
 
   useEffect(() => {
 
-    console.log(position.x * TILE_SIZE + "     " + window.innerWidth)
-
     window.addEventListener('keydown', handleKeyPress);
     return () => {
       window.removeEventListener('keydown', handleKeyPress);

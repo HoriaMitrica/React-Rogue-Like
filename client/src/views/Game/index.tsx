@@ -24,7 +24,6 @@ export const Game = () => {
   return (
     <>
       <div className={"hide-scrollbar"}>
-
         <Room mapData={mapData} />
         <Player layers={mapData.layers} />
         
