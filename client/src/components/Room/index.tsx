@@ -29,7 +29,7 @@ export const Room: React.FC<RoomProps> = ({mapData}) => {
                   top: tile.y * TILE_SIZE,
                   width: TILE_SIZE,
                   height: TILE_SIZE,
-                  backgroundImage: `url(/src/assets/json/spritesheet.png)`,
+                  backgroundImage: `url(${mapData.spriteSheetPath})`,
                   backgroundPosition: `-${x}px -${y}px`
                 }}
               />
