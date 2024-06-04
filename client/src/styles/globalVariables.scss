@@ -8,8 +8,9 @@ $screen-mobile: 550px;
 /*------------------------------------*\
   # Color
 \*------------------------------------*/
-
 body, html {
+  background-color:black;
+  scrollbar-width: none;
   margin: 0;
   padding: 0;
 }
